@@ -1,0 +1,81 @@
+/** @format */
+
+$very-dark-blue: hsl(216, 12%, 8%);
+$dark-blue: hsl(213, 19%, 18%);
+$medium-grey: hsl(216, 12%, 54%);
+$light-grey: hsl(217, 12%, 63%);
+$white: hsl(0, 0%, 100%);
+$orange: hsl(25, 97%, 53%);
+
+@mixin fundo_notas {
+    cursor: pointer;
+        width: 50px;
+        $alturadalinha: 50px;
+        height: $alturadalinha;
+        background: lighten($dark-blue, 5);
+        border-radius: 80px;
+        transition: 0.1s ease-in-out;
+
+        &:hover {
+            background: $orange;
+            font-weight: 700;
+            p {
+                color: $white;
+                font-weight: 700;
+            }
+        }
+
+        p {
+            line-height: $alturadalinha;
+            text-align: center;
+            font-family: Overpass;
+            color: $light-grey;
+            font-weight: 700;
+            transition: 0.1s ease-in-out;
+        }
+
+        @media only screen and (max-width: 600px) {
+            width: 43px;
+            $alturadalinha: 43px;
+            height: $alturadalinha;
+
+            p{
+                line-height: $alturadalinha;
+            }
+        } 
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: content-box;
+
+    p {
+        font-size: 15px;
+    }
+}
+
+body {
+    background: #141519;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+
+    @import "cartao.scss";
+
+    .text-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 30px;
+        @import "titulo.scss";
+        @import "subtitulo.scss";
+        @import "nota.scss";
+        @import "botao.scss";
+    }
+}

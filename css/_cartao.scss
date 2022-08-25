@@ -1,0 +1,85 @@
+/** @format */
+
+.cartao {
+    background: $dark-blue;
+    border-radius: 30px;
+    position: relative;
+    width: 25vw;
+    min-width: 280px;
+    min-height: 300px;
+    padding: 30px;
+    @media only screen and (max-width: 600px) {
+        width: 70vw;
+    }
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    .card-itens1 {
+        min-height: 350px;
+        .fig {
+            @include fundo_notas();
+            position: absolute;
+            top: 0;
+            left: 0;
+            position: relative;
+            cursor: default;
+            &:hover {
+                background: lighten($dark-blue, 5);
+                font-weight: 700;
+                p {
+                    color: $white;
+                    font-weight: 700;
+                }
+            }
+            img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+    .card-itens2 {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 350px;
+        .imagem-conclusao {
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .text-mostra {
+            margin: 30px 0px;
+            padding: 7px 20px;
+            border-radius: 20px;
+            background: lighten($dark-blue, 5);
+
+            p {
+                color: $orange;
+                font-family: Overpass;
+                font-weight: 700;
+            }
+        }
+
+        .text-agrad {
+            p {
+                color: $white;
+                font-family: Overpass;
+                font-weight: 700;
+                font-size: 2rem;
+            }
+        }
+        .sub-texto {
+            p {
+                text-align: center;
+                color: $white;
+                font-family: Overpass;
+                margin-top: 8px;
+                font-size: 0.9rem;
+            }
+        }
+    }
+}

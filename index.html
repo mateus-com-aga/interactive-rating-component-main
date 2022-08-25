@@ -1,0 +1,160 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
+
+        <title>Frontend Mentor | Interactive rating component</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="css/main.css" />
+        <link
+            rel="stylesheet"
+            href="node_modules/animate.css/animate.min.css"
+        />
+        <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+        <style>
+            .attribution {
+                font-size: 11px;
+                text-align: center;
+            }
+            .attribution a {
+                color: hsl(228, 45%, 44%);
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Rating state start -->
+
+        <div class="container animate__animated animate__bounce">
+            <div class="cartao">
+                <div class="card-itens1">
+                    <div class="fig">
+                        <img
+                            src="images/icon-star.svg"
+                            alt=""
+                            width="33%"
+                            height="33%"
+                        />
+                    </div>
+                    <div class="text-content">
+                        <div class="titulo">
+                            <p>How did we do?</p>
+                        </div>
+                        <div class="subtitulo">
+                            <p>
+                                Please let us know how we did with your support
+                                request. All feedback is appreciated to help us
+                                improve our offering!
+                            </p>
+                        </div>
+                        <div class="nota">
+                            <div onclick="select(1)" class="item1"><p>1</p></div>
+                            <div onclick="select(2)" class="item2"><p>2</p></div>
+                            <div onclick="select(3)" class="item3"><p>3</p></div>
+                            <div onclick="select(4)" class="item4"><p>4</p></div>
+                            <div onclick="select(5)" class="item5"><p>5</p></div>
+                        </div>
+                        <div class="botao" value="2" onclick="send()">
+                            Submit
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-itens2">
+                    <div class="imagem-conclusao">
+                        <img src="images/illustration-thank-you.svg" alt="" />
+                    </div>
+                    <div class="text-mostra">
+                        <p></p>
+                    </div>
+                    <div class="text-agrad">
+                        <p>Thank you!</p>
+                    </div>
+                    <div class="sub-texto">
+                        <p>
+                            We appreciate you taking the time to give a rating.
+                            If you ever need more support, don't hesitate to get
+                            in touch!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rating state end -->
+
+        <!-- Thank you state start -->
+
+        You selected
+        <!-- Add rating here -->
+        out of 5 Thank you! We appreciate you taking the time to give a rating.
+        If you ever need more support, don’t hesitate to get in touch!
+
+        <!-- Thank you state end -->
+
+        <div class="attribution">
+            Challenge by
+            <a
+                href="https://www.frontendmentor.io?ref=challenge"
+                target="_blank"
+                >Frontend Mentor</a
+            >. Coded by <a href="#">Your Name Here</a>.
+        </div>
+
+        <script>
+            function select(x){
+                console.log(x);
+                
+                document.querySelector('.item1').style.background = "";
+                document.querySelector('.item1 p').style.color = "";
+
+                document.querySelector('.item2').style.background = "";
+                document.querySelector('.item2 p').style.color = "";
+
+                document.querySelector('.item3').style.background = "";
+                document.querySelector('.item3 p').style.color = "";
+
+                document.querySelector('.item4').style.background = "";
+                document.querySelector('.item4 p').style.color = "";
+
+                document.querySelector('.item5').style.background = "";
+                document.querySelector('.item5 p').style.color = "";
+
+                itemtext = document.querySelector(".text-mostra p");
+                item = document.querySelector(`.item${x}`);
+                item2 = document.querySelector(`.item${x} p`);
+                console.log(item);
+                item.style.background = "hsl(216, 12%, 54%)";
+                item2.style.color = "white"
+                itemtext.innerText = `You selected ${x} out of 5`
+            }
+
+            function send() {
+                let val = (document.querySelector(".cartao").style.transform =
+                    "rotateY(360deg)");
+                console.log(val);
+                let card1 = document.querySelector(".card-itens1");
+                let card2 = document.querySelector(".card-itens2");
+                // card.innerText = "";
+                card1.style.display = "none";
+                card2.style.display = "flex";
+            }
+        </script>
+    </body>
+</html>

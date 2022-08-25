@@ -1,0 +1,11 @@
+.nota {
+    display: flex;
+    flex-direction: row;
+    margin: 25px 0;
+    width: 100%;
+    align-self: center;
+    justify-content: space-between;
+    div {
+        @include fundo_notas();
+    }
+}
